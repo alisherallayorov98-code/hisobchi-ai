@@ -5,52 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ro‘yxatdan o‘tish — Hisobchi AI</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 
 <body class="bg-gradient-to-br from-blue-50 to-green-50 min-h-screen flex items-center justify-center">
 
-  <div class="bg-white p-8 rounded-2xl shadow w-full max-w-md">
-    
-    <h2 class="text-2xl font-bold text-center text-blue-600 mb-6">
-      Hisobchi AI — Ro‘yxatdan o‘tish
-    </h2>
+<div class="bg-white p-8 rounded-2xl shadow w-full max-w-md">
 
-    <form class="space-y-4">
-      
-      <input 
-        type="text" 
-        placeholder="Ism"
-        class="w-full border p-3 rounded-xl"
-      />
+<h2 class="text-2xl font-bold text-center text-blue-600 mb-6">
+Hisobchi AI — Ro‘yxatdan o‘tish
+</h2>
 
-      <input 
-        type="email" 
-        placeholder="Email"
-        class="w-full border p-3 rounded-xl"
-      />
+<form class="space-y-4" onsubmit="registerUser(event)">
 
-      <input 
-        type="password" 
-        placeholder="Parol"
-        class="w-full border p-3 rounded-xl"
-      />
+<input id="email" type="email" placeholder="Email"
+class="w-full border p-3 rounded-xl"/>
 
-      <button 
-        class="w-full bg-blue-600 text-white p-3 rounded-xl hover:bg-blue-700"
-      >
-        Ro‘yxatdan o‘tish
-      </button>
+<input id="password" type="password" placeholder="Parol"
+class="w-full border p-3 rounded-xl"/>
 
-    </form>
+<button class="w-full bg-blue-600 text-white p-3 rounded-xl">
+Ro‘yxatdan o‘tish
+</button>
 
-    <p class="text-center mt-4 text-sm">
-      Hisobingiz bormi?
-      <a href="login.html" class="text-blue-600 font-semibold">
-        Kirish
-      </a>
-    </p>
+</form>
 
-  </div>
+<p class="text-center mt-4 text-sm">
+Hisobingiz bormi?
+<a href="login.html" class="text-blue-600 font-semibold">
+Kirish
+</a>
+</p>
+
+</div>
+
+<script>
+
+const supabaseUrl = "https://ckfshmtyutgpifmmsfhr.supabase.co";
+const supabaseKey = "PASTE_YOUR_PUBLISHABLE_KEY";
+const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+async function registerUser(event) {
+
+event.preventDefault();
+
+const email = document.getElementById("email").value;
+const password = document.getElementById("password").value;
+
+const { data, error } = await supabase.auth.signUp({
+email,
+password,
+});
+
+if (error) {
+alert(error.message);
+} else {
+alert("Ro‘yxatdan o‘tish muvaffaqiyatli!");
+window.location.href = "dashboard.html";
+}
+
+}
+
+</script>
 
 </body>
 </html>
