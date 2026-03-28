@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlowPilot — Har sohaga mos operatsion platforma</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav">
+        <div class="brand">FlowPilot</div>
+        <button id="langToggle" class="outline-btn" aria-label="Switch language">UZ / EN</button>
+      </nav>
+      <div class="hero-content">
+        <h1 data-i18n="hero_title">Har sohaga mos boshqaruv platformasi</h1>
+        <p data-i18n="hero_desc">
+          Ishlab chiqarish, savdo va xizmat bizneslari uchun modulli ERP/MES. Oddiy boshlaysiz,
+          keyin bozor talabiga qarab kengaytirasiz.
+        </p>
+        <div class="hero-actions">
+          <a href="#demo" class="primary-btn" data-i18n="cta_primary">Demo so‘rash</a>
+          <a href="#modules" class="secondary-btn" data-i18n="cta_secondary">Modullarni ko‘rish</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="modules" class="section">
+        <h2 data-i18n="modules_title">Yadro modullar</h2>
+        <div class="card-grid">
+          <article class="card">
+            <h3 data-i18n="m1_title">Ombor va partiya hisobi</h3>
+            <p data-i18n="m1_desc">FIFO/Weighted Average, lot kuzatuvi va real-time qoldiq.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="m2_title">Ishlab chiqarish</h3>
+            <p data-i18n="m2_desc">BOM, operatsiya bosqichlari, yo‘qotish va brak tahlili.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="m3_title">Savdo va xarid</h3>
+            <p data-i18n="m3_desc">Buyurtma, shartnoma, hisob-faktura va to‘lov holati.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="m4_title">Hisobot va analitika</h3>
+            <p data-i18n="m4_desc">KPI panel, rentabellik, yo‘qotish va samaradorlik kesimi.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section industries">
+        <h2 data-i18n="industries_title">Bir nechta soha uchun bitta platforma</h2>
+        <div class="pill-row">
+          <span class="pill">Qayta ishlash</span>
+          <span class="pill">Oziq-ovqat</span>
+          <span class="pill">Tekstil</span>
+          <span class="pill">Distribyusiya</span>
+          <span class="pill">Xizmat ko‘rsatish</span>
+        </div>
+      </section>
+
+      <section id="demo" class="section cta-panel">
+        <h2 data-i18n="demo_title">Startupga aylantirishga tayyor arxitektura</h2>
+        <p data-i18n="demo_desc">
+          Multi-tenant, rolga asoslangan ruxsatlar, audit log va API-first yondashuv bilan qurilgan.
+        </p>
+        <form class="demo-form" onsubmit="event.preventDefault(); alert('Rahmat! Tez orada bog‘lanamiz.');">
+          <label>
+            <span data-i18n="label_name">Ismingiz</span>
+            <input type="text" required />
+          </label>
+          <label>
+            <span data-i18n="label_sector">Sohangiz</span>
+            <input type="text" required />
+          </label>
+          <button class="primary-btn" type="submit" data-i18n="submit">Yuborish</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 FlowPilot</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
