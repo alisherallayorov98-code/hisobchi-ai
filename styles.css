@@ -1,0 +1,86 @@
+:root {
+  --bg: #0b1021;
+  --card: #131a30;
+  --text: #eef2ff;
+  --muted: #bdc6e5;
+  --primary: #6d8dff;
+  --accent: #26d0ce;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: linear-gradient(180deg, #090d1b, #0f1730 28%, #0b1021);
+  color: var(--text);
+}
+
+.hero { padding: 1.25rem 1rem 3rem; max-width: 1100px; margin: 0 auto; }
+.nav { display: flex; justify-content: space-between; align-items: center; }
+.brand { font-weight: 800; letter-spacing: 0.4px; }
+.hero-content { margin-top: 3.5rem; max-width: 760px; }
+.hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin: 0; }
+.hero p { color: var(--muted); font-size: 1.12rem; line-height: 1.6; }
+
+.hero-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1.25rem; }
+.primary-btn,
+.secondary-btn,
+.outline-btn {
+  border-radius: 12px;
+  border: 1px solid transparent;
+  padding: 0.72rem 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--text);
+  background: transparent;
+  cursor: pointer;
+}
+.primary-btn { background: linear-gradient(120deg, var(--primary), var(--accent)); color: #06112f; }
+.secondary-btn, .outline-btn { border-color: #3e4a74; }
+
+.section { max-width: 1100px; margin: 0 auto; padding: 1rem 1rem 2.2rem; }
+.section h2 { margin-bottom: 1rem; }
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.9rem;
+}
+.card {
+  background: rgba(19, 26, 48, 0.9);
+  border: 1px solid #2b365f;
+  border-radius: 14px;
+  padding: 1rem;
+}
+.card p { color: var(--muted); }
+
+.industries .pill-row { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+.pill {
+  background: #1c2644;
+  border: 1px solid #334472;
+  border-radius: 999px;
+  padding: 0.4rem 0.8rem;
+  color: #d6def8;
+}
+
+.cta-panel {
+  background: rgba(11, 18, 41, 0.85);
+  border: 1px solid #2a3760;
+  border-radius: 16px;
+}
+.cta-panel p { color: var(--muted); }
+.demo-form {
+  margin-top: 0.8rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.8rem;
+}
+label { display: grid; gap: 0.3rem; font-size: 0.95rem; color: #dbe3fd; }
+input {
+  background: #0e1530;
+  border: 1px solid #334472;
+  border-radius: 10px;
+  color: var(--text);
+  padding: 0.65rem;
+}
+
+.footer { text-align: center; color: #a5b2dd; padding: 2rem 1rem; }
